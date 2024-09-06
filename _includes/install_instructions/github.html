@@ -1,0 +1,51 @@
+{% comment %}
+GitHub CLI  Setup instructions rely on Shell instructions. If you don't include
+Shell instructions as part of your workshop website, make sure to adjust
+the text below accordingly.
+{% endcomment %}
+<div id="github">
+  <h3>GitHub CLI</h3>
+  <p>
+    GitHub provides a command line interface (CLI) that we will use to simplify the authentication setup between our computer and GitHub's platform.
+  </p>
+
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a data-os="windows" href="#github-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+      <li role="presentation"><a data-os="macos" href="#github-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+      <li role="presentation"><a data-os="linux" href="#github-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <article role="tabpanel" class="tab-pane active" id="github-windows">
+            <p>
+                Proceed to install <a href="https://cli.github.com/">Github CLI</a> by downloading the installer.
+            </p>
+        </article>
+        <article role="tabpanel" class="tab-pane" id="github-macos">
+            <p>
+                The easiest way to install <a href="https://cli.github.com/">Github CLI</a> is through <a href="https://brew.sh/">homebrew</a>. First you need to install homebrew:
+                <ol>
+                    <li>Open a terminal window</li>
+                    <li><p> Type </p>
+                        <div class="org-src-container">
+                            <pre class="src src-bash">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</pre>
+                        </div>
+                        <p> Follow the installation prompts </p>
+                    </li>
+                    <li><p> Once homebrew is installed, you can then install Github's CLI</p>
+                        <div class="org-src-container">
+                            <pre class="src src-bash">brew install gh</pre>
+                        </div>
+                    </li>
+                </ol>
+            </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="github-linux">
+          <p>
+              Proceed to install <a href="https://github.com/cli/cli#linux--bsd">Github's CLI</a> following the option according to your distribution.
+          </p>
+      </article>
+    </div>
+  </div>
+</div>
