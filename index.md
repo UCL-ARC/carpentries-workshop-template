@@ -145,6 +145,8 @@ Sign up to receive future editions and read our full archive: <a href="https://c
 {% include dc/intro.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/intro.html %}
+{% elsif site.carpentry == "ucl-hpcc" %}
+{% include ucl-hpcc/intro.html %}
 {% endif %}
 
 {% if site.pilot %}
@@ -163,6 +165,8 @@ workshop is only open to people from a particular institution.
 {% include dc/who.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/who.html %}
+{% elsif site.carpentry == "ucl-hpcc" %}
+{% include ucl-hpcc/who.html %}
 {% endif %}
 
 {% comment %}
@@ -384,6 +388,8 @@ Please comment out the `incubator_pre_survey` and `incubator_post_survey` fields
 in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
 change the value of `carpentry` to `incubator`.
 </div>
+{% elsif site.carpentry == "ucl-hpcc" %}
+{% include ucl-hpcc/surveys.html %}
 {% else %}
 <p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
@@ -422,6 +428,8 @@ of code below the Schedule `<h2>` header below with
 {% include dc/schedule.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/schedule.html %}
+{% elsif site.carpentry == "ucl-hpcc" %}
+{% include ucl-hpcc/schedule.html %}
 {% elsif site.carpentry == "incubator" %}
 This workshop is teaching a lesson in 
 <a href="https://carpentries-incubator.org/">The Carpentries Incubator</a>. Please check <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for a list of lesson sections and estimated timings.
@@ -498,6 +506,8 @@ during the workshop.
 {% include dc/setup.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/setup.html %}
+{% elsif site.carpentry == "ucl-hpcc" %}
+{% include ucl-hpcc/setup.html %}
 {% elsif site.carpentry == "incubator" %}
 Please check the "Setup" page of
 <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for instructions to follow

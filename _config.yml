@@ -10,6 +10,7 @@
 #  dc: Data Carpentry
 #  lc: Library Carpentry
 #  cp: Carpentries (to use for instructor training for instance)
+#  ucl-hpcc: UCL-RC's Introduction to HPC Incubator lesson
 #  incubator: for workshops teaching a lesson in The Carpentries Incubator
 # Note that for regular workshops, you should use:
 #  https://github.com/carpentries/workshop-template
@@ -69,6 +70,16 @@ title: "Workshop Title"
 # incubator_post_survey: "put the URL of your post-workshop survey here"
 #
 #------------------------------------------------------------
+
+#------------------------------------------------------------
+# UCL HPCC Course settings
+#------------------------------------------------------------
+arc_website: "https://www.ucl.ac.uk/advanced-research-computing/"
+arc_education_website: "https://www.ucl.ac.uk/advanced-research-computing/education"
+hpcc_lesson_site: "http://github-pages.arc.ucl.ac.uk/hpc-intro/"
+myriad_apply_form: "https://www.rc.ucl.ac.uk/docs/Account_Services/#apply-for-an-account"
+myriad_docs_descr: "https://www.rc.ucl.ac.uk/docs/Clusters/Myriad/"
+rc_services_docs: "https://www.rc.ucl.ac.uk/docs/"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
