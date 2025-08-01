@@ -108,13 +108,16 @@ displayed if the 'eventbrite' field in the header is not set.
 {% if page.eventbrite %}
 <strong>Some adblockers block the registration window. If you do not see the
   registration box below, please check your adblocker settings.</strong>
-<iframe
-  src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
-  frameborder="0"
-  width="100%"
-  height="280px"
-  scrolling="auto">
-</iframe>
+<div id="eventbrite-widget-container"></div>
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+<script type="text/javascript">
+    window.EBWidgets.createWidget({
+        // Required
+        widgetType: 'checkout',
+        eventId: {{page.eventbrite}},
+        iframeContainerId: 'eventbrite-widget-container',
+    });
+</script>
 {% endif %}
 
 
@@ -278,6 +281,17 @@ special instructions.
 </p>
 
 {% comment %}
+WORKSHOP RECORDINGS
+
+Modify or remove the block below if you plan to record the workshop.
+{% endcomment %}
+<p id="recordings">
+  <strong>Workshop Recordings:</strong>
+  Carpentries workshops are designed to be interactive rather than lecture-based, with lessons that build upon one another.
+  To foster a positive online learning environment, we strongly recommend that participants join in real time.
+  As a result, workshop recordings are not recommended and may not be available to learners.
+</p>
+{% comment %}
 CONTACT EMAIL ADDRESS
 
 Display the contact email address set in the configuration file.
@@ -337,7 +351,7 @@ CODE OF CONDUCT
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
 <p>
-Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
+Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/policies/coc/">Code of Conduct</a>. This document also outlines how to report an incident if needed.
 </p>
 
 <p class="text-center">
