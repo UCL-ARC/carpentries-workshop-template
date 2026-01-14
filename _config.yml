@@ -34,6 +34,7 @@ carpentry: "swc"
 # dc-image:         for Data Carpentry Image Processing
 # swc-inflammation: for Software Carpentry based on the inflammation dataset
 # swc-gapminder:    for Software Carpentry based on the Gapminder dataset
+# ucl:              for Carpentries based UCL ARC lessons
 curriculum: "FIXME"
 
 # If there is both an R and python official version of a curriculum
@@ -80,7 +81,10 @@ hpcc_lesson_site: "http://github-pages.arc.ucl.ac.uk/hpc-intro/"
 myriad_apply_form: "https://www.rc.ucl.ac.uk/docs/Account_Services/#apply-for-an-account"
 myriad_docs_descr: "https://www.rc.ucl.ac.uk/docs/Clusters/Myriad/"
 rc_services_docs: "https://www.rc.ucl.ac.uk/docs/"
-
+#------------------------------------------------------------
+# UCL (non-official) Carpentries workshops
+#------------------------------------------------------------
+ucl_email: arc.education@ucl.ac.uk
 #------------------------------------------------------------
 # Generic settings (should not need to change).
 #------------------------------------------------------------

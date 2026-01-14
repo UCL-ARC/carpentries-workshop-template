@@ -13,14 +13,18 @@
 	<a href="{{ site.dc_site }}">Data Carpentry</a>
 	{% elsif site.carpentry == "lc" %}
 	<a href="{{ site.lc_site }}">Library Carpentry</a>
-	{% elsif site.carpentry == "cp" %}
+	{% elsif site.carpentry == "cp" or site.carpentry == "ucl" %}
 	<a href="{{ site.carpentries_site }}">The Carpentries</a>
 	{% endif %}
       </h4>
     </div>
     <div class="col-md-6" align="right">
       <h4>
+	{% if site.carpentry == "ucl" %}
+	<a href="mailto:{{ site.ucl_email }}">Contact UCL/ARC</a>
+	{% else %}
 	<a href="mailto:{{ site.email }}">Contact The Carpentries</a>
+	{% endif %}
       </h4>
     </div>
   </div>

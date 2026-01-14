@@ -132,6 +132,9 @@ the pitch.
 {% endcomment %}
 
 <p>
+{% if site.carpentry == "ucl" %}
+This is a workshop run by UCL based on <a href="{{site.carpentries_site}}">The Carpentries</a> material.
+{% endif %}
 <strong><a href="https://carpentries.org">The Carpentries</a></strong> project comprises the <a
 href="{{site.swc_site}}">Software Carpentry</a>, <a href="{{site.dc_site}}">Data Carpentry</a>, and
 <a href="{{site.lc_site}}">Library Carpentry</a> communities of Instructors, Trainers, Maintainers,
@@ -451,6 +454,8 @@ of code below the Schedule `<h2>` header below with
 {% include lc/schedule.html %}
 {% elsif site.carpentry == "ucl-hpcc" %}
 {% include ucl-hpcc/schedule.html %}
+{% elsif site.carpentry == "ucl" %}
+{% include ucl/schedule.html %}
 {% elsif site.carpentry == "incubator" %}
 This workshop is teaching a lesson in 
 <a href="https://carpentries-incubator.org/">The Carpentries Incubator</a>. Please check <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for a list of lesson sections and estimated timings.
@@ -491,6 +496,8 @@ please preview your site before committing, and make sure to run
   Data Carpentry
   {% elsif site.carpentry == "lc" %}
   Library Carpentry
+  {% elsif site.carpentry == "ucl" %}
+  UCL-ARC
   {% endif %}
   workshop,
   you will need access to software as described below.
@@ -529,6 +536,8 @@ during the workshop.
 {% include lc/setup.html %}
 {% elsif site.carpentry == "ucl-hpcc" %}
 {% include ucl-hpcc/setup.html %}
+{% elsif site.carpentry == "ucl" %}
+{% include ucl/setup.html %}
 {% elsif site.carpentry == "incubator" %}
 Please check the "Setup" page of
 <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for instructions to follow
