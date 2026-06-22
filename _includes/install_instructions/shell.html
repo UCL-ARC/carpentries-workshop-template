@@ -1,8 +1,8 @@
 <div id="shell">
   <h3>The Bash Shell</h3>
   <p>
-    Bash is a commonly-used shell that gives you the power to do
-    tasks more quickly.
+    Bash is a commonly-used shell that gives you the power to do tasks more quickly.
+	Instructions for finding and opening a shell on your operating system can be found in the Software Carpentry <a href="https://swcarpentry.github.io/shell-novice/index.html#open-a-new-shell">shell-novice lesson</a>.
   </p>
 
   <div>
@@ -16,12 +16,10 @@
       <article role="tabpanel" class="tab-pane outer-tab active" id="shell-windows">
         <p>Two options are available for setting up your device so that you’re ready to learn in our workshops with Microsoft Windows.</p>
 
-        <p>The first is Windows Subsystem for Linux v2 (“WSL 2”), and the second is Git for Windows (often referred to as “Git Bash”).</p>
+        <p>The first is Git for Windows (often referred to as “Git Bash”), and the second is Windows Subsystem for Linux v2 (“WSL 2”).</p>
 
-        <p>Please follow the instructions below, depending on <a href="#shell-windows-check">which version of Windows you are using</a>. If unsure, use the asterisk marked version <strong>*</strong>.</p>
-
-        <div class="alert alert-warning">
-            <strong>To install WSL 2, you will need Administrator (“admin”) privileges on your laptop/PC.</strong><br>
+        <div class="info alert-info">
+            <strong>If you choose to install WSL 2, you will need Administrator (“admin”) privileges on your laptop/PC.</strong><br>
             If you have a device provided by an institution that does not give you admin rights, please either request that they:
             <ul>
                 <li>Give you admin rights (temporarily or otherwise) to install WSL 2 yourself OR</li>
@@ -33,32 +31,14 @@
             <strong>If you experience any issues, please install Git for Windows using the <a class="os-switch" data-software="gitbash" href="#shell-install-gitbash">instructions below</a>.</strong>
         </p>
 
-        <table>
-            <tr>
-                <th>Windows Version</th>
-                <th>What to Install</th>
-            </tr>
-            <tr>
-                <td>Windows 8.1 or earlier</td>
-                <td><a class="os-switch" data-software="gitbash" href="#shell-install-gitbash">Install Git for Windows</a></td>
-            </tr>
-            <tr>
-                <td>Windows 10 (#1902 and below)</td>
-                <td><a class="os-switch" data-software="gitbash" href="#shell-install-gitbash">Install Git for Windows</a></td>
-            </tr>
-            <tr>
-                <td>Windows 10 (#1903 and above)</td>
-                <td><a class="os-switch" data-software="wsl" href="#shell-install-wsl">Install WSL 2</a></td>
-            </tr>
-            <tr>
-                <td>Windows 11 <strong>*</strong></td>
-                <td><a class="os-switch" data-software="wsl" href="#shell-install-wsl">Install WSL 2</a></td>
-            </tr>
-        </table>
-
         <details>
             <summary>Help! What should I use?</summary>
-            <div class="alert alert-warning">
+            <div class="info alert-info">
+                <p>
+                    We recommend Git for Windows as the default bash experience for Windows users attending our workshops, as it is the most straightforward to install and use, and does not require admin privileges.
+                    However, it has limited functionality compared to a full Linux environment, and when you continue your data science learning after the workshop you will find that Git Bash does not support all the tools and workflows you might need.
+                    We recommend that after the workshop, you consider installing WSL 2 to get a more complete Linux experience within your Windows environment, and to have access to the full range of tools and software available on Linux.
+                </p>
                 <p>
                     <h4 id="shell-windows-check">Checking your Windows Version</h4>
                     Click on the Windows Start Menu button in the bottom left corner of your screen, or tap the Windows button on your keyboard, and type “System” in the search bar.
@@ -85,19 +65,112 @@
                 <br/>
                 <p>
                     <h4 id="shell-windows-10-11">Windows 10 (version #1903 and later) and Windows 11</h4>
-                    WSL 2 is recommended for more modern versions of Windows as it provides an accurate and representative experience of Linux, but provided from within your Windows environment.
+                    Windows 11 and later versions of Windows 10 support WSL 2, so following the workshop where you will use Git Bash, we recommend that you consider installing WSL2.
+                    If you are not comfortable installing WSL 2, please follow the Git for Windows <a href="#shell-git">installation instructions</a> below.
                 </p>
             </div>
         </details>
 
         <ul class="nav nav-tabs" role="tablist" id="win-tabs">
-          <li role="presentation" class="active"><a data-software="wsl" href="#shell-install-wsl" aria-controls="shell-wsl" role="tab" data-toggle="tab">WSL 2</a></li>
-          <li role="presentation"><a data-software="gitbash" href="#shell-install-gitbash" aria-controls="shell-gitbash" role="tab" data-toggle="tab">Git for Windows</a></li>
+          <li role="presentation" class="active"><a data-software="gitbash" href="#shell-install-gitbash" aria-controls="shell-gitbash" role="tab" data-toggle="tab">Git for Windows</a></li>
+          <li role="presentation"><a data-software="wsl" href="#shell-install-wsl" aria-controls="shell-wsl" role="tab" data-toggle="tab">WSL 2</a></li>
         </ul>
 
         <div class="tab-content">
-            <article role="tabpanel" class="tab-pane active" id="shell-install-wsl" aria-labelledby="tab-wsl">
+
+            <article role="tabpanel" class="tab-pane active" id="shell-install-gitbash" aria-labelledby="tab-wsl">
+                <h3>Installing Git for Windows</h3>
+
+                <ol>
+                <li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
+                <li>Run the installer and follow the steps below:
+                    <ol>
+                    {% comment %} Git 2.29.1 Setup {% endcomment %}
+                    <li>
+                        Click on "Next" four times (if you see "Install" instead of "Next", uncheck the box "Only show new options", then click "Next" two times).  You don't need to change anything
+                        in the Information, location, components, and start menu screens.
+                    </li>
+                    <li>
+                        <strong>
+                        From the dropdown menu, "Choosing the default editor used by Git", select "Use the Nano editor by default" (NOTE: you will need to scroll <emph>up</emph> to find it) and click on "Next".
+                        </strong>
+                    </li>
+                    {% comment %} Adjusting the name of the initial branch in new repositories {% endcomment %}
+                    <li>
+                        On the page that says "Adjusting the name of the initial branch in new repositories", ensure that
+                "Let Git decide" is selected and click on "Next". This will ensure the highest level of compatibility for our lessons.
+                {% comment %}
+                This section also has "Override the default branch name for new repositories" and has a text box set
+                to "main". I'm not having people switch to this just yet because our git lesson still uses the old paradigm.
+                {% endcomment %}
+                    </li>
+                    {% comment %} Adjusting your PATH environment {% endcomment %}
+                    <li>
+                        Ensure that "Git from the command line and also from 3rd-party software" is selected and
+                        click on "Next". (If you don't do this Git Bash will not work properly, requiring you to
+                        remove the Git Bash installation, re-run the installer and to select the "Git from the
+                        command line and also from 3rd-party software" option.)
+                    </li>
+                    {% comment %} Choosing the SSH executable {% endcomment %}
+                <li>
+                Select "Use bundled OpenSSH" and click on "Next".
+                </li>
+                    {% comment %} Choosing HTTPS transport backend {% endcomment %}
+                    <li>
+                      Ensure that "Use the native Windows Secure Channel Library" is selected and click on "Next".
+                    </li>
+                    {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
+                                        with their own root CA are still able to access remote git repos. {% endcomment %}
+                    {% comment %} Configuring the line ending conversions {% endcomment %}
+                    <li>
+                        Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and click on "Next".
+                    </li>
+                    {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
+                    <li>
+                        <strong>
+                        Ensure that "Use Windows' default console window" is selected and click on "Next".
+                        </strong>
+                    </li>
+                    {% comment %} Configuring extra options {% endcomment %}
+                    <li>
+                Ensure that "Fast-forward or merge" is selected and click "Next"
+                    </li>
+                    <li>
+                Ensure that "Git Credential Manager" is selected and click on "Next".
+                    </li>
+                    <li>
+                Ensure that "Enable file system caching" is selected and click on "Next".
+                    </li>
+                    {% comment %} Configuring experimental options {% endcomment %}
+                    <li>Click on "Install".</li>
+                    {% comment %} Installing {% endcomment %}
+                    {% comment %} Completing the Git Setup Wizard {% endcomment %}
+                    {% comment %} as of 2020-06-02, the Window will say "click Finish", but the button is labelled as "Next" {% endcomment %}
+                    <li>Click on "Finish" or "Next".</li>
+                    </ol>
+                  </li>
+                  <li>
+                    If your "HOME" environment variable is not set (or you don't know what this is):
+                    <ol>
+                    <li>Open command prompt (Open Start Menu then type <code>cmd</code> and press <kbd>Enter</kbd>)</li>
+                    <li>
+                        Type the following line into the command prompt window exactly as shown:
+                        <p><code>setx HOME "%USERPROFILE%"</code></p>
+                    </li>
+                    <li>Press <kbd>Enter</kbd>, you should see <code>SUCCESS: Specified value was saved.</code></li>
+                    <li>Quit command prompt by typing <code>exit</code> then pressing <kbd>Enter</kbd></li>
+                    </ol>
+                  </li>
+                </ol>
+                <p>This will provide you with both Git and Bash in the Git Bash program.</p>
+            </article>
+
+            <article role="tabpanel" class="tab-pane" id="shell-install-wsl" aria-labelledby="tab-wsl">
                 <h3>Installing WSL 2</h3>
+
+                <p>
+                    <strong>If you are confident to try installing WSL 2 rather than Git Bash, please use the following instructions.</strong>
+                </p>
 
                 <p>
                     We will install Ubuntu via the <a href="#shell-windows-wsl-store">Microsoft Store</a>.
@@ -108,7 +181,7 @@
 
                 <details>
                     <summary>Why Ubuntu?</summary>
-                    <div class="alert alert-warning">
+                    <div class="info alert-info">
                         <p>
                             Linux comes in many flavours, called <a href="https://en.wikipedia.org/wiki/Linux_distribution">“distributions”</a>, and each has its own benefits, features and quirks!
                         </p>
@@ -167,103 +240,6 @@
                 </p>
                 <strong>If you get stuck, please contact your workshop organisers to get assistance before the workshop starts.</strong>
             </article>
-
-            <article role="tabpanel" class="tab-pane" id="shell-install-gitbash" aria-labelledby="tab-wsl">
-                <h3>Installing Git for Windows</h3>
-                <p>
-                    <strong>If you are unable to use WSL 2, please use the following instructions to install Git for Windows (“Git Bash”).</strong>
-                </p>
-
-                <ol>
-                <li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
-                <li>Run the installer and follow the steps below:
-                    <ol>
-                    {% comment %} Git 2.29.1 Setup {% endcomment %}
-                    <li>
-                        Click on "Next" four times (two times if you've previously
-                        installed Git).  You don't need to change anything
-                        in the Information, location, components, and start menu screens.
-                    </li>
-                    <li>
-                        <strong>
-                        From the dropdown menu, "Choosing the default editor used by Git", select "Use the Nano editor by default" (NOTE: you will need to scroll <emph>up</emph> to find it) and click on "Next".
-                        </strong>
-                    </li>
-                    {% comment %} Adjusting the name of the initial branch in new repositories {% endcomment %}
-                    <li>
-                        On the page that says "Adjusting the name of the initial branch in new repositories", ensure that
-                "Let Git decide" is selected. This will ensure the highest level of compatibility for our lessons.
-                {% comment %}
-                This section also has "Override the default branch name for new repositories" and has a text box set
-                to "main". I'm not having people switch to this just yet because our git lesson still uses the old paradigm.
-                {% endcomment %}
-                    </li>
-                    {% comment %} Adjusting your PATH environment {% endcomment %}
-                    <li>
-                        Ensure that "Git from the command line and also from 3rd-party software" is selected and
-                        click on "Next". (If you don't do this Git Bash will not work properly, requiring you to
-                        remove the Git Bash installation, re-run the installer and to select the "Git from the
-                        command line and also from 3rd-party software" option.)
-                    </li>
-                    {% comment %} Choosing the SSH executable {% endcomment %}
-                <li>
-                Select "Use bundled OpenSSH".
-                </li>
-                    {% comment %} Choosing HTTPS transport backend {% endcomment %}
-                    <li>
-                      Ensure that "Use the native Windows Secure Channel Library" is selected and click on "Next".
-                    </li>
-                    {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
-                                        with their own root CA are still able to access remote git repos. {% endcomment %}
-                    {% comment %} Configuring the line ending conversions {% endcomment %}
-                    <li>
-                        Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and click on "Next".
-                    </li>
-                    {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
-                    <li>
-                        <strong>
-                        Ensure that "Use Windows' default console window" is selected and click on "Next".
-                        </strong>
-                    </li>
-                    {% comment %} Configuring extra options {% endcomment %}
-                    <li>
-                Ensure that "Default (fast-forward or merge) is selected and click "Next"
-                    </li>
-                    <li>
-                Ensure that "Git Credential Manager" is selected and click on "Next".
-                    </li>
-                    <li>
-                Ensure that "Enable file system caching" is selected and click on "Next".
-                    </li>
-                    {% comment %} Configuring experimental options {% endcomment %}
-                    <li>Click on "Install".</li>
-                    {% comment %} Installing {% endcomment %}
-                    {% comment %} Completing the Git Setup Wizard {% endcomment %}
-                    {% comment %} as of 2020-06-02, the Window will say "click Finish", but the button is labelled as "Next" {% endcomment %}
-                    <li>Click on "Finish" or "Next".</li>
-                    </ol>
-                  </li>
-                  <li>
-                    If your "HOME" environment variable is not set (or you don't know what this is):
-                    <ol>
-                    <li>Open command prompt (Open Start Menu then type <code>cmd</code> and press <kbd>Enter</kbd>)</li>
-                    <li>
-                        Type the following line into the command prompt window exactly as shown:
-                        <p><code>setx HOME "%USERPROFILE%"</code></p>
-                    </li>
-                    <li>Press <kbd>Enter</kbd>, you should see <code>SUCCESS: Specified value was saved.</code></li>
-                    <li>Quit command prompt by typing <code>exit</code> then pressing <kbd>Enter</kbd></li>
-                    </ol>
-                  </li>
-                </ol>
-                <p>This will provide you with both Git and Bash in the Git Bash program.</p>
-                <h4>Video Tutorial</h4>
-                <div class="yt-wrapper2">
-                    <div class="yt-wrapper">
-                        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/339AEqk9c-8?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </article>
         </div>
       </article>
 
@@ -273,8 +249,6 @@
 	  Bash is available in all versions, so no need to install anything.
 	  You access Bash from the Terminal (found in
 	  <code>/Applications/Utilities</code>).
-          See the Git installation <a href="#shell-macos-video-tutorial">video tutorial</a>
-          for an example on how to open the Terminal.
           You may want to keep Terminal in your dock for this workshop.
         </p>
         <p>
